@@ -11,7 +11,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainApp {
     public static void main(String[] args) {
         ApplicationContext context =new ClassPathXmlApplicationContext("cn/evilcoder/Beans.xml");
-        HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
-        obj.getMessage();
+        HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
+        objA.getMessage();
+        objA.setMessage("I'm object A");
+        objA.getMessage();
+        HelloWorld objB = (HelloWorld) context.getBean("helloWorld");
+        objB.getMessage();
+
     }
 }
